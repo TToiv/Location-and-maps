@@ -46,7 +46,6 @@ function failPosition(error) {
 	$('#time').val("Error getting data: " + error);
 	
 }
-
 var watchID = navigator.geolocation.watchPosition(success, fail, locationOptions);
 
 function success (position)
@@ -58,4 +57,4 @@ function fail (error)
             //do something with the error
         }
 
-navigator.geolocation.clearWatch(watchID);
+navigator.geolocation.clearWatch(watchID);  
