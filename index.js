@@ -46,23 +46,3 @@ function failPosition(error) {
 	$('#time').val("Error getting data: " + error);
 	
 }
-
-var watchID = navigator.geolocation.watchPosition(success, fail, locationOptions);
-
-
-function success (position)
-        {
-	//do something with the position
-        }
-function fail (error)
-        {
-	//do something with the error
-        }
-
-navigator.geolocation.clearWatch(watchID);
-
-var locationOptions = { 
-	maximumAge: 10000, 
-	timeout: 6000, 
-	enableHighAccuracy: true 
-};
