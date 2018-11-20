@@ -52,11 +52,17 @@ var watchID = navigator.geolocation.watchPosition(success, fail, locationOptions
 
 function success (position)
         {
-            //do something with the position
+    var time = new Date(position.timestamp);
+	var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+	
+	$('#time').val("Recieved data at " + time);
+	$('#lattext').val("Latitude coordinates: " + latitude);
+    $('#longtext').val("Longitude coordinates: " + longitude);
         }
 function fail (error)
         {
-            //do something with the error
+	$('#time').val("Error getting data: " + error);r
         }
 
 navigator.geolocation.clearWatch(watchID);  
